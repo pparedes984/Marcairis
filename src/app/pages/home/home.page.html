@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="settings-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons (click)="onLogout()" slot="end">
+      <ion-button>
+        <ion-icon name="log-out-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-item lines="none">
+    <ion-avatar slot="start">
+      <img src="/assets/profile.png">
+    </ion-avatar>
+    <ion-label>
+      <p>Bienvenido,</p>
+      <h3>Usuario</h3>
+    </ion-label>
+    <div>
+      Logout
+    </div>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+  <div class="ion-margin-bottom">
+    <ion-slides>
+      <ion-slide>
+        <ion-card>
+          <ion-header>
+            <h3>Tarjeta de Presentacion</h3>
+            <div>
+              <img src="/assets/logo.png" alt="">
+            </div>
+          </ion-header>
+          <ion-card-content class="ion-text-left">
+            <ion-card-title class="ion-margin-bottom">
+              Paul Paredes 
+            </ion-card-title>
+            <ion-card-subtitle>
+              
+            </ion-card-subtitle>
+            <ion-label><strong>Email:</strong> paulparedesq@gmail.com</ion-label><br/>
+            <ion-label><strong>Celular:</strong>0983721681</ion-label><br/>
+            <ion-label><strong>Descripcion:</strong></ion-label><br/>
+            <ion-label><strong>Provincia:</strong>Ecuador</ion-label><br/>
+            <ion-label><strong>Ciudad:</strong>Quito</ion-label>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

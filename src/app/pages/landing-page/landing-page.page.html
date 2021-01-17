@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div id="header">
+    <h1>Marcairis Agenda</h1>
+    <h2>Bienvenidos</h2>
+    <img src="/assets/intro.png">
+    <h3>Inicia sesion con</h3>
+  </div>
+  <ion-row >
+    <ion-col col-3 center text-center>
+      <ion-button shape="round" routerLink='/login'>
+        <ion-icon    name="person-outline" ></ion-icon>
+      </ion-button>
+      <div>Correo y contrasena</div>
+    </ion-col>
+    <ion-col col-3 center text-center>
+      <ion-button shape="round">
+        <ion-icon name="finger-print-outline"></ion-icon>
+      </ion-button>
+      <div>Huella digital</div>
+    </ion-col>
+    <ion-col col-3 center text-center>
+      <ion-button shape="round" routerLink='/login-pin'>
+        <ion-icon name="apps-outline"></ion-icon>
+      </ion-button>
+      <div>Pin</div>
+    </ion-col>
+  </ion-row>
+  <div id="header">
+    <h3>- o -</h3>
+  </div>
+  <ion-button id="botonregistro" shape="round" expand="block" routerLink='/register'>
+    Registrate
+  </ion-button>
+  <ion-row>
+    <div id="letras" class="ion-padding">
+      Olvidaste tu contraseña? <a routerLink='/restablecer-contrasena'>
+        Reestablecer contraseña</a>!
+    </div>
+  </ion-row>
+</ion-content>

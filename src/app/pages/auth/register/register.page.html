@@ -1,0 +1,150 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary" routerLink="/landing-page">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login">Iniciar Sesion</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Crea tu cuenta<br />en Marcairis Agenda</h1>
+
+  <form id="form" [formGroup] = "registrationForm" (ngSubmit)="register()" >
+    <h3>Imagen de perfil</h3>
+    <div class="container" id="imagenPerfil">
+      <img src="{{imgURL}}">
+      <div>
+        <ion-col col-2>
+          <ion-button shape="round"  size="small" fill="outline"
+          (click)="getCamera()">
+            Camara
+          </ion-button>
+        </ion-col>
+        <ion-col col-2>
+          <ion-button shape="round"  size="small" fill="outline"
+          (click)="getGalery()">
+            Galeria
+          </ion-button>
+        </ion-col>
+      </div>
+    </div>
+    <h3>Informacion personal</h3>
+    <ion-item class="ion-margin-bottom">
+      <ion-input placeholder="Nombres" formControlName="nombres" required></ion-input>
+    </ion-item>
+    <div *ngFor = "let error of errorMesagges.nombres">
+      <ng-container *ngIf = "nombres.hasError(error.type) && (nombres.dirty || nombres.touched)">
+        <small class="error-message"> {{error.message}}</small>
+      </ng-container>
+    </div>
+    <ion-item class="ion-margin-bottom">
+      <ion-input placeholder="Apellidos" formControlName="apellidos" required></ion-input>
+    </ion-item>
+    <div *ngFor = "let error of errorMesagges.apellidos">
+      <ng-container *ngIf = "apellidos.hasError(error.type) && (apellidos.dirty || apellidos.touched)">
+        <small class="error-message"> {{error.message}}</small>
+      </ng-container>
+    </div>
+    <ion-item class="ion-margin-bottom">
+      <ion-input placeholder="Email" formControlName="email" required ></ion-input>
+    </ion-item>
+    <div *ngFor = "let error of errorMesagges.email">
+      <ng-container *ngIf = "email.hasError(error.type) && (email.dirty || email.touched)">
+        <small class="error-message"> {{error.message}}</small>
+      </ng-container>
+    </div>
+    <ion-item class="ion-margin-bottom">
+      <ion-input placeholder="Celular" formControlName="celular">
+      </ion-input>
+    </ion-item>
+    <div *ngFor = "let error of errorMesagges.celular">
+      <ng-container *ngIf = "celular.hasError(error.type) && (celular.dirty || celular.touched)">
+        <small class="error-message"> {{error.message}}</small>
+      </ng-container>
+    </div>
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="password" placeholder="Pin de 4 dígitos numéricos" formControlName="pin" required>
+      </ion-input>
+    </ion-item>
+    <div *ngFor = "let error of errorMesagges.pin">
+      <ng-container *ngIf = "pin.hasError(error.type) && (pin.dirty || pin.touched)">
+        <small class="error-message"> {{error.message}}</small>
+      </ng-container>
+    </div>
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="password" placeholder="Contrasena" formControlName="contrasena" required>
+      </ion-input>
+    </ion-item>
+    <div *ngFor = "let error of errorMesagges.contrasena">
+      <ng-container *ngIf = "contrasena.hasError(error.type) && (contrasena.dirty || contrasena.touched)">
+        <small class="error-message"> {{error.message}}</small>
+      </ng-container>
+    </div>
+    <ion-item class="ion-margin-bottom">
+      <ion-datetime displayformat="YYYY-MM-DD" placeholder="Fecha Nacimiento" formControlName="fechanacimiento" required>
+      </ion-datetime>
+    </ion-item>
+    <div *ngFor = "let error of errorMesagges.fechanacimiento">
+      <ng-container *ngIf = "fechanacimiento.hasError(error.type) && (fechanacimiento.dirty || fechanacimiento.touched)">
+        <small class="error-message"> {{error.message}}</small>
+      </ng-container>
+    </div>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-select interface="popover" formControlName="sexo" placeholder="Seleccionar Sexo" required>
+        <ion-select-option value="Masculino">Masculino</ion-select-option>
+        <ion-select-option value="Femenino">Femenino</ion-select-option>
+        <ion-select-option value="Otro">Otro</ion-select-option>
+      </ion-select>
+     </ion-item>
+     <div *ngFor = "let error of errorMesagges.sexo">
+      <ng-container *ngIf = "sexo.hasError(error.type) && (sexo.dirty || sexo.touched)">
+        <small class="error-message"> {{error.message}}</small>
+      </ng-container>
+    </div>
+
+    
+    <ion-item class="ion-margin-bottom">
+      <ion-textarea  rows="6" placeholder="Descripción Personal" formControlName="descripcion">
+      </ion-textarea>
+    </ion-item>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-select interface="popover" formControlName="paisresidencia" placeholder="Seleccionar País" required>
+        <ion-select-option value="Brasil">Argentina</ion-select-option>
+        <ion-select-option value="Brasil">Brasil</ion-select-option>
+        <ion-select-option value="Panama">Bolivia</ion-select-option>
+        <ion-select-option value="Colombia">Colombia</ion-select-option>
+        <ion-select-option value="Ecuador">Ecuador</ion-select-option>
+        <ion-select-option value="Panama">Panama</ion-select-option>
+        <ion-select-option value="Uruguay">Uruguay</ion-select-option>
+        <ion-select-option value="Venezuela">Venezuela</ion-select-option>
+      </ion-select>
+     </ion-item>
+     <div *ngFor = "let error of errorMesagges.paisresidencia">
+      <ng-container *ngIf = "paisresidencia.hasError(error.type) && (paisresidencia.dirty || paisresidencia.touched)">
+        <small class="error-message"> {{error.message}}</small>
+      </ng-container>
+    </div>
+
+    <ion-item class="ion-margin-bottom">
+      <ion-input placeholder="Ciudad de Residencia" formControlName="ciudadresidencia" required></ion-input>
+    </ion-item>
+    <div *ngFor = "let error of errorMesagges.ciudadresidencia">
+      <ng-container *ngIf = "ciudadresidencia.hasError(error.type) && (ciudadresidencia.dirty || ciudadresidencia.touched)">
+        <small class="error-message"> {{error.message}}</small>
+      </ng-container>
+    </div>
+
+    <ion-button [disabled]="!registrationForm.valid" class="toagenda" type="submit" shape="round" expand="block">
+      Iniciar agenda
+    </ion-button>   
+  </form>
+  <p>Al presionar 'Iniciar agenda'<br />usted esta de acuerdo con <br />nuestros terminos & condiciones.</p>
+</ion-content>

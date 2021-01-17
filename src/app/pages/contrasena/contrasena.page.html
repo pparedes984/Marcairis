@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary" (click)="cerrar()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div id="header">
+    <h1>Cambiar contraseña</h1>
+    
+  </div>
+  <form id="form" (ngSubmit)="cambiar(fCambiar)" #fCambiar="ngForm">
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="password" name="password" placeholder="Contraseña nueva" id="original" [(ngModel)]="cambiarPassword.password"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="password" name="contrasena" placeholder="Reingrese contraseña" id="verificar" [(ngModel)]="verificacion">
+      </ion-input>
+    </ion-item>
+    <ion-button type="submit" shape="round" expand="block">
+      Guardar
+    </ion-button>
+    
+    
+    <ion-row>
+      <div id="letras" class="ion-padding">
+        No posees cuenta? <a routerLink='/register'>
+          Registrate</a>!
+      </div>
+    </ion-row>
+  </form>
+  
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary" routerLink="/landing-page">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <div id="header">
+    <h1>Iniciar sesion</h1>
+    <img src="/assets/logo.png">
+  </div>
+  <form id="form" (ngSubmit)="login(fLogin)" #fLogin="ngForm">
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="text" name="email" placeholder="Correo electronico" [(ngModel)]="loginUser.email"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-bottom">
+      <ion-input type="password" name="contrasena" placeholder="Contrasena" [(ngModel)]="loginUser.contrasena">
+      </ion-input>
+    </ion-item>
+    <ion-button type="submit" shape="round" expand="block">
+      Iniciar sesión
+    </ion-button>
+    
+    <ion-row color="light">
+      <ion-col col-3>
+        <ion-button ion-button icon-only block class="btn-facebook btn-personalized" shape="round" expand="block"
+          (click)="loginFingerprint()">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col col-3>
+        <ion-button ion-button icon-only block class="huella btn-personalized" type="submit" shape="round"
+          expand="block">
+          <ion-icon name="finger-print-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col col-3>
+        <ion-button ion-button icon-only block class="btn-google btn-personalized" shape="round" expand="block">
+          <ion-icon name="logo-google"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <div id="letras" class="ion-padding">
+        No posees cuenta? <a routerLink='/register'>
+          Registrate</a>!
+      </div>
+    </ion-row>
+  </form>
+  
+</ion-content>
